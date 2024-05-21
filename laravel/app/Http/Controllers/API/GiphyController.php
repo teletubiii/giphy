@@ -13,9 +13,21 @@ use Validator;
 
 class GiphyController extends BaseController
 {
-    protected $api_key = '1yeJoTlujzTwZaZJDmGVesM6MhEb3sCp';
+    private static $baseUrl;
+    private static $apiKey;
 
-    /**
+    public static function initialize()
+    {
+        self::$baseUrl = config('giphy.base_url');
+        self::$apiKey = config('giphy.api_key');
+    }
+
+    public function __construct()
+    {
+        self::initialize();
+    }
+
+   /**
      * Display a listing of the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -31,8 +43,8 @@ class GiphyController extends BaseController
         $limit = $request->input('limit', 10); // Default limit is 10
         $offset = $request->input('offset', 0); // Default offset is 0
 
-        $response = Http::get("http://api.giphy.com/v1/gifs/search", [
-            'api_key' => $this->api_key,
+        $response = Http::get(self::$baseUrl . "gifs/search", [
+            'api_key' => self::$apiKey,
             'q' => $query,
             'limit' => $limit,
             'offset' => $offset
@@ -51,8 +63,8 @@ class GiphyController extends BaseController
      */
     public function show($id): JsonResponse
     {
-        $response = Http::get("http://api.giphy.com/v1/gifs/{$id}", [
-            'api_key' => $this->api_key,
+        $response = Http::get(self::$baseUrl . "gifs/{$id}", [
+            'api_key' => self::$apiKey,
         ]);
 
         if ($response->successful()) {
