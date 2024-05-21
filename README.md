@@ -53,3 +53,7 @@ Follow these steps to set up your environment:
     - ![Sequence](./diagrams/sequence.png)
 * Use cases
     - ![Use cases](./diagrams/use-cases.png)
+
+## Postman collection
+
+- You can find the post collection in the root of the project

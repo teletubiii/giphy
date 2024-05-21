@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "87b3e276-e34f-4a75-ad56-9d76e7f339be",
+		"name": "giphy-prex",
+		"description": "A continuacion detallamos los endpoints disponibles:\n\nPOST | Register permite registrar un usuario para operar con la API\n\nUrl: /api/register\n\nEntrada:\n\nemail: requerido|email\n\npassword: requerido|string\n\nnombre: requerido|string\n\n> {  \n\"email\":\"[dario.pedraza1998@gmail.com](https://mailto:dariiiiiiiiiiiioooooooo.pedraza1998@gmail.com)\",  \n\"password\":\"1234\",  \n\"name\":\"dario\"  \n} \n  \n\nSalida token con expiración de 30 minutos:\n\n> {  \n\"success\": true,  \n\"data\": {  \n\"token\": \"\",  \n\"user_id\": 1  \n},  \n\"message\": \"Usuario registrado exitosamente.\"  \n} \n  \n\nPOST | Login permite la autenticación para operar con la API\n\nurl: /api/login\n\nEntrada:\n\nemail: requerido|string\n\npassword: requerido|string\n\n> {  \n\"email\":\"[dario.pedraza1998@gmail.com](https://mailto:dario.pedraza1998@gmail.com)\",  \n\"password\":\"1234\"  \n} \n  \n\nSalida token con expiración de 30 minutos\n\n> {  \n\"success\": true,  \n\"data\": {  \n\"token\": \"\",  \n\"name\": \"dario\",  \n\"user_id\": 1  \n},  \n\"message\": \"User login successfully.\"  \n} \n  \n\nGET | Buscar gifs por una frase o término.\n\nurl: /api/giphy?limit=1&query=cheeseburgers&offset=2\n\nquery params:\n\nlimit=number| Cantidad de gifs a traer\n\nquery=string| Número máximo de resultados\n\noffset=number | Número de resultados a omitir desde el inicio\n\nSalida:\n\n> {  \n\"success\": true,  \n\"data\": \\[  \n{  \n\"type\": \"gif\",  \n\"id\": \"elxZwVNCcL5hvktNFs\",  \n\"url\": \"[https://giphy.com/gifs/reaction-mood-elxZwVNCcL5hvktNFs\"](https://giphy.com/gifs/reaction-mood-elxZwVNCcL5hvktNFs),  \n\"slug\": \"reaction-mood-elxZwVNCcL5hvktNFs\",  \n\"bitly_gif_url\": \"[https://gph.is/2CY4dRN\"](https://gph.is/2CY4dRN),  \n\"bitly_url\": \"[https://gph.is/2CY4dRN\"](https://gph.is/2CY4dRN),  \n\"embed_url\": \"[https://giphy.com/embed/elxZwVNCcL5hvktNFs\"](https://giphy.com/embed/elxZwVNCcL5hvktNFs),  \n\"username\": \"\",  \n\"source\": \"[https://www.reddit.com/r/reactiongifs/\"](https://www.reddit.com/r/reactiongifs/),  \n\"title\": \"Cheeseburger GIF by MOODMAN\",  \n\"rating\": \"g\",  \n\"content_url\": \"\",  \n\"source_tld\": \"[www.reddit.com\"](http://www.reddit.com),  \n\"source_post_url\": \"[https://www.reddit.com/r/reactiongifs/\"](https://www.reddit.com/r/reactiongifs/),  \n\"is_sticker\": 0,  \n\"import_datetime\": \"2018-09-11 23:56:20\",  \n\"trending_datetime\": \"2019-09-18 16:00:51\",  \n\"images\": {  \n\"original\": {  \n\"height\": \"340\",  \n\"width\": \"500\",  \n\"size\": \"205261\",  \n\"url\": \"[https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.gif?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g\"](https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.gif?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&ep=v1_gifs_search&rid=giphy.gif&ct=g),  \n\"mp4_size\": \"181439\",  \n\"mp4\": \"[https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.mp4?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&amp;ep=v1_gifs_search&amp;rid=giphy.mp4&amp;ct=g\"](https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.mp4?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&ep=v1_gifs_search&rid=giphy.mp4&ct=g),  \n\"webp_size\": \"170290\",  \n\"webp\": \"[https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.webp?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&amp;ep=v1_gifs_search&amp;rid=giphy.webp&amp;ct=g\"](https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.webp?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&ep=v1_gifs_search&rid=giphy.webp&ct=g),  \n\"frames\": \"10\",  \n\"hash\": \"900b2a420befa9b472831c05dc5fcdc2\"  \n},  \n\"downsized_medium\": {  \n\"height\": \"340\",  \n\"width\": \"500\",  \n\"size\": \"205261\",  \n\"url\": \"[https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.gif?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g\"](https://media1.giphy.com/media/elxZwVNCcL5hvktNFs/giphy.gif?cid=e045cb3ftiz827eoaaom7jg46dotngh1nt14xib5xw189bwm&ep=v1_gifs_search&rid=giphy.gif&ct=g)  \n}  \n},  \n\"analytics_response_payload\": \"e=ZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD1lMDQ1Y2IzZnRpejgyN2VvYWFvbTdqZzQ2ZG90bmdoMW50MTR4aWI1eHcxODlid20mZ2lmX2lkPWVseFp3Vk5DY0w1aHZrdE5GcyZjdD1n\",  \n\"analytics\": {  \n\"onload\": {  \n\"url\": \"[https://giphy-analytics.giphy.com/v2/pingback_simple?analytics_response_payload=e=ZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD1lMDQ1Y2IzZnRpejgyN2VvYWFvbTdqZzQ2ZG90bmdoMW50MTR4aWI1eHcxODlid20mZ2lmX2lkPWVseFp3Vk5DY0w1aHZrdE5GcyZjdD1n&amp;action_type=SEEN\"](https://giphy-analytics.giphy.com/v2/pingback_simple?analytics_response_payload=e=ZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD1lMDQ1Y2IzZnRpejgyN2VvYWFvbTdqZzQ2ZG90bmdoMW50MTR4aWI1eHcxODlid20mZ2lmX2lkPWVseFp3Vk5DY0w1aHZrdE5GcyZjdD1n&action_type=SEEN)  \n},  \n\"onclick\": {  \n\"url\": \"[https://giphy-analytics.giphy.com/v2/pingback_simple?analytics_response_payload=e=ZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD1lMDQ1Y2IzZnRpejgyN2VvYWFvbTdqZzQ2ZG90bmdoMW50MTR4aWI1eHcxODlid20mZ2lmX2lkPWVseFp3Vk5DY0w1aHZrdE5GcyZjdD1n&amp;action_type=CLICK\"](https://giphy-analytics.giphy.com/v2/pingback_simple?analytics_response_payload=e=ZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD1lMDQ1Y2IzZnRpejgyN2VvYWFvbTdqZzQ2ZG90bmdoMW50MTR4aWI1eHcxODlid20mZ2lmX2lkPWVseFp3Vk5DY0w1aHZrdE5GcyZjdD1n&action_type=CLICK)  \n},  \n\"onsent\": {  \n\"url\": \"[https://giphy-analytics.giphy.com/v2/pingback_simple?analytics_response_payload=e=ZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD1lMDQ1Y2IzZnRpejgyN2VvYWFvbTdqZzQ2ZG90bmdoMW50MTR4aWI1eHcxODlid20mZ2lmX2lkPWVseFp3Vk5DY0w1aHZrdE5GcyZjdD1n&amp;action_type=SENT\"](https://giphy-analytics.giphy.com/v2/pingback_simple?analytics_response_payload=e=ZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD1lMDQ1Y2IzZnRpejgyN2VvYWFvbTdqZzQ2ZG90bmdoMW50MTR4aWI1eHcxODlid20mZ2lmX2lkPWVseFp3Vk5DY0w1aHZrdE5GcyZjdD1n&action_type=SENT)  \n}  \n},  \n\"alt_text\": \"\"  \n}  \n\\],  \n\"message\": \"GIFs retrieved successfully.\"  \n} \n  \n\nGET | Buscar GIF por ID\n\nUrl: /api/giphy/5f9Qy99suPqYfYIqwH  \nUrl param:\n\nID : requerido|numérico\n\nSalida:  \nLa salida devuelve un objeto con la misma estructura que en el item anterior\n\nPOST | Guardar GIF favorito\n\nUrl: /api/gifs/favorite\n\nEntrada: gif_id, alias y user_id\n\ngif_id: requerido|numérico\n\nalias : requerido|cadena\n\nuser_id: requerido|numérico\n\n> {  \n\"gif_id\":\"5f9Qy99suPqYfYIqwH\",  \n\"alias\": \"hamburguesa\",  \n\"user_id\":1  \n} \n  \n\nSalida:\n\n> {  \n\"success\": true,  \n\"data\": {  \n\"gif_id\": \"1234\",  \n\"alias\": \"hamburguesa\",  \n\"user_id\": 1,  \n\"updated_at\": \"2024-05-19T23:39:16.000000Z\",  \n\"created_at\": \"2024-05-19T23:39:16.000000Z\",  \n\"id\": 3  \n},  \n\"message\": \"GIF saved as favorite successfully.\"  \n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22124563"
+	},
+	"item": [
+		{
+			"name": "register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"\r",
+							"var token = jsonData.data.token;\r",
+							"var user_id = jsonData.data.user_id;\r",
+							"\r",
+							"pm.globals.set(\"token\", token);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"dario.pedraza1998@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"name\":\"dario\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"var token = jsonData.data.token;\r",
+							"var user_id = jsonData.data.user_id;\r",
+							"\r",
+							"pm.globals.set(\"token\", token);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"dario.pedraza1998@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "giphy-get-gifs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/giphy?limit=1&query=cheeseburgers&offset=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"giphy"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "query",
+							"value": "cheeseburgers"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "giphy-get-gif-by-id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/giphy/5f9Qy99suPqYfYIqwH",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"giphy",
+						"5f9Qy99suPqYfYIqwH"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "giphy-add-favorite-gif",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gif_id\":\"1234\",\r\n    \"alias\": \"hamburguesa\",\r\n    \"user_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/gifs/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gifs",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
