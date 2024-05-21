@@ -17,22 +17,24 @@ services:
       - mysql
     networks:
       - laravel-net
-
+    links:
+      - "mysql:mysql"
+    entrypoint:
+      - /var/www/html/docker-entrypoint.sh
   # MySQL Database
   mysql:
     image: mysql:8
     container_name: laravel-mysql
     ports:
-      - "3306:3306"
+      - "3308:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: your_mysql_root_password
-      MYSQL_DATABASE: your_database_name
-      MYSQL_USER: your_database_user_name
-      MYSQL_PASSWORD: your_database_user_password
-    volumes:
-      - ./mysql_data:/var/lib/mysql
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
     networks:
       - laravel-net
+    restart: always
 
 networks:
   laravel-net:

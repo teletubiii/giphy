@@ -1,9 +1,8 @@
-# Use an official PHP image with Apache as the base image.
 FROM php:8.2-apache
 
 # Set environment variables.
 ENV ACCEPT_EULA=Y
-LABEL maintainer="er.avinashrathod@gmail.com"
+LABEL maintainer="dario.pedraza1998@gmail.com"
 
 # Install system dependencies.
 RUN apt-get update && apt-get install -y \
@@ -37,16 +36,11 @@ WORKDIR /var/www/html
 # Copy the Laravel application files into the container.
 COPY . .
 
-# Install Laravel dependencies using Composer.
-RUN composer install --no-interaction --optimize-autoloader
-
-# Set permissions for Laravel.
-RUN chown -R www-data:www-data storage bootstrap/cache
-
 # Expose port 80 for Apache.
 EXPOSE 80
 
-# Start Apache web server.
-CMD ["apache2-foreground"]
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-# You can add any additional configurations or commands required for Laravel 10 here.
+
+
